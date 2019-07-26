@@ -109,7 +109,7 @@ std::unique_ptr<LocalHandle> Endpoint::getLocalHandle(
                 {
                     throw ArbiterError("Unable to write local handle, Wrote "+range+", Available space="+std::to_string(info.available));
                 }
-                std::cerr << "Downloaded " << range << ", Available space = " << std::to_string(info.available)<<std::endl;
+                std::cerr << "Downloaded " << range <<" / "<<fileSize<< ", Available space = " << std::to_string(info.available)<<std::endl;
             }
         }
         else
