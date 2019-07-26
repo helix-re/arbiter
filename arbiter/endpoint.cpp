@@ -104,13 +104,12 @@ std::unique_ptr<LocalHandle> Endpoint::getLocalHandle(
                 const http::Headers headers { { "Range", range } };
                 const auto data(getBinary(subpath, headers));
                 stream.write(data.data(), data.size());
-				std::filesystem::space_info info = std::filesystem::space(tmp);
+		std::filesystem::space_info info = std::filesystem::space(tmp);
                 if (!stream.good())
                 {
                     throw ArbiterError("Unable to write local handle, Wrote "+range+", Available space="+std::to_string(info.available));
                 }
-                std::cerr << "Downloaded " << range << ", Available space = "
-                          << std::to_string(info.available)<<std::endl;
+                std::cerr << "Downloaded " << range << ", Available space = " << std::to_string(info.available)<<std::endl;
             }
         }
         else
