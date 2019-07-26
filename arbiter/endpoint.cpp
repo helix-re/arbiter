@@ -24,7 +24,7 @@ namespace arbiter
 namespace
 {
     constexpr std::size_t mb = 1024 * 1024;
-    const std::size_t chunkSize = 10 * mb;
+    const std::size_t chunkSize = 500 * mb;
     const auto streamFlags(
         std::ofstream::binary |
         std::ofstream::out |
