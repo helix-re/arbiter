@@ -19,7 +19,7 @@ namespace arbiter
 {
 
 constexpr std::size_t mb = 1024 * 1024;
-const std::size_t chunkSize = 10 * mb;
+const std::size_t chunkSize = 500 * mb;
 
 /** General utilities. */
 
