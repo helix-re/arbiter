@@ -85,9 +85,11 @@ endif()
 
 target_link_libraries(arbiter PUBLIC ${SHLWAPI})
 
-add_subdirectory(third/gtest-1.7.0)
-include_directories(src third/gtest-1.7.0/include third/gtest-1.7.0)
-add_subdirectory(test)
+if(WITH_TESTS)
+    add_subdirectory(third/gtest-1.7.0)
+    include_directories(src third/gtest-1.7.0/include third/gtest-1.7.0)
+    add_subdirectory(test)
+endif()
 
 install(TARGETS arbiter DESTINATION lib)
 
