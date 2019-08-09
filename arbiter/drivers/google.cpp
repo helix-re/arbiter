@@ -116,7 +116,8 @@ std::unique_ptr<std::size_t> Google::tryGetSize(const std::string path) const
     {
         const auto& s(res.headers().at("Content-Length"));
         return makeUnique<std::size_t>(std::stoull(s));
-    }
+    } else 
+        throw ArbiterError("Could not get size of " + path + "HTTP error code : " + std::to_string(res.code()));
 
     return std::unique_ptr<std::size_t>();
 }
