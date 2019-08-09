@@ -123,7 +123,7 @@ std::unique_ptr<std::size_t> Dropbox::tryGetSize(
             result = makeUnique<std::size_t>(rx.at("size").get<uint64_t>());
         }
     } else 
-        throw ArbiterError("Could not get size of " + rawPath + "HTTP error code : " + std::to_string(res.code()));
+        throw ArbiterError("Could not get size of " + rawPath + ", HTTP error code : " + std::to_string(res.code()));
 
     return result;
 }

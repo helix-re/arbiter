@@ -49,7 +49,7 @@ std::unique_ptr<std::size_t> Http::tryGetSize(std::string path) const
         const std::string& str(res.headers().at("Content-Length"));
         size.reset(new std::size_t(std::stoul(str)));
     } else 
-        throw ArbiterError("Could not get size of " + path + "HTTP error code : " + std::to_string(res.code()));
+        throw ArbiterError("Could not get size of " + path + ", HTTP error code : " + std::to_string(res.code()));
 
     return size;
 }
